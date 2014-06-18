@@ -29,12 +29,15 @@ public class MyTest {
 	}
 	
 	/**
-	 * 文件名提取后缀的问题
+	 * substring测试
 	 */
-	public static void testFileName(){
+	public static void testSubString(){
 		
 		String s = "as.df.asdfa.txt" ;
 		System.out.println(s.substring(s.lastIndexOf(".")+1));
+		
+		s = "http://i-lc.svnmishu.com/js/set.js?v=1.3" ;
+		System.out.println(s.substring(0 , s.lastIndexOf("/js/")));
 	}
 	
 	/**
@@ -224,6 +227,9 @@ public class MyTest {
 	
 	public static void main(String[] args) {
 		
-		testClassPath();
+		testSubString();
+		
+		DecimalFormat a = new DecimalFormat("#.00");
+		System.out.println(a.format(11111230.422));
 	}
 }

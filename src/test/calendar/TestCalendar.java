@@ -11,7 +11,7 @@ public class TestCalendar {
 		System.out.println(cl.get(Calendar.YEAR) + "-" +  (cl.get(Calendar.MONTH) + 1)  + "-" + cl.get(Calendar.DAY_OF_MONTH));
 		
 		cl.set(Calendar.MONTH, Calendar.FEBRUARY);
-		for (int i = 0; i < 30 ; i++) {
+		for (int i = 0; i < 60 ; i++) {
 			
 			//cl.roll(Calendar.DATE, 1);
 			cl.roll(Calendar.DATE, true);
@@ -26,7 +26,7 @@ public class TestCalendar {
 		Calendar cl = Calendar.getInstance() ;
 		System.out.println(cl.get(Calendar.YEAR) + "-" +  (cl.get(Calendar.MONTH) + 1)  + "-" + cl.get(Calendar.DAY_OF_MONTH));
 		
-		for (int i = 0; i < 30 ; i++) {
+		for (int i = 0; i < 60 ; i++) {
 			
 			cl.add(Calendar.DATE, 1);
 			System.out.println(cl.get(Calendar.YEAR) + "-" +  (cl.get(Calendar.MONTH) + 1)  + "-" + cl.get(Calendar.DAY_OF_MONTH));
@@ -34,6 +34,6 @@ public class TestCalendar {
 	}
 	
 	public static void main(String[] args){
-		testRoll();
+		testAdd();
 	}
 }
