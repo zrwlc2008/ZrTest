@@ -1,6 +1,7 @@
 package test.springaop.service;
 
 public class AService {
+	
 	public void barA() {
 		System.out.println("AServiceImpl.barA()");
 	}

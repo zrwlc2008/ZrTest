@@ -5,7 +5,7 @@ import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 import test.springaop.service.AService;
 import test.springaop.service.BService;
 
-public class AOPTest extends AbstractDependencyInjectionSpringContextTests {  
+public class TestAOP extends AbstractDependencyInjectionSpringContextTests {  
     
     private AService aService;  
       
@@ -33,7 +33,7 @@ public class AOPTest extends AbstractDependencyInjectionSpringContextTests {
         System.out.println("SpringTest JUnit test");  
         aService.barA();  
         bService.fooB();  
-        bService.barB("JUnit test barB",0);  
+        bService.barB();  
     }  
       
     /** 
@@ -42,7 +42,7 @@ public class AOPTest extends AbstractDependencyInjectionSpringContextTests {
     public void testThrow()  
     {  
         try {  
-            bService.barB("JUnit call barB",1);  
+            bService.barB();  
         } catch (IllegalArgumentException e) {  
               
         }  

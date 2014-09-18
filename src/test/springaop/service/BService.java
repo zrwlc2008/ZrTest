@@ -2,11 +2,9 @@ package test.springaop.service;
 
 public class BService {
 	
-	public void barB(String _msg, int _type) {
-		System.out.println("BServiceImpl.barB(msg:" + _msg + " type:" + _type
-				+ ")");
-		if (_type == 1)
-			throw new IllegalArgumentException("≤‚ ‘“Ï≥£");
+	public void barB() {
+		System.out.println("BServiceImpl.barB()");
+		//throw new IllegalArgumentException("≤‚ ‘“Ï≥£");
 	}
 
 	public void fooB() {

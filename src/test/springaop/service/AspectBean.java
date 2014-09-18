@@ -1,9 +1,9 @@
-package test.springaop;
+package test.springaop.service;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 
-public class TestAspect {
+public class AspectBean {
 
 
     public void doAfter(JoinPoint jp) {  
@@ -26,8 +26,8 @@ public class TestAspect {
                 + jp.getSignature().getName());  
     }  
   
-    public void doThrowing(JoinPoint jp, Throwable ex) {  
-        System.out.println("doThrowing: " + jp.getTarget().getClass().getName()  
+    public void doAfterThrowing(JoinPoint jp, Throwable ex) {  
+        System.out.println("doAfterThrowing: " + jp.getTarget().getClass().getName()  
                 + "." + jp.getSignature().getName() + " throw exception");  
         System.out.println(ex.getMessage());  
     }  
