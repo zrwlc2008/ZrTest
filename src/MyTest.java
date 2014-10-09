@@ -1,4 +1,5 @@
 import java.io.File;
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 public class MyTest {
@@ -38,6 +39,12 @@ public class MyTest {
 		
 		s = "http://i-lc.svnmishu.com/js/set.js?v=1.3" ;
 		System.out.println(s.substring(0 , s.lastIndexOf("/js/")));
+		
+		s = "ZF_1_ZF_OutputRecordBean_1405390669736" ;
+		s = s.substring(3,s.length()-1);
+		System.out.println(s);
+		s = s.substring(0,s.indexOf("_"));
+		System.out.println(s);
 	}
 	
 	/**
@@ -227,9 +234,15 @@ public class MyTest {
 	
 	public static void main(String[] args) {
 		
-		testSubString();
+		//testSubString();
 		
-		DecimalFormat a = new DecimalFormat("#.00");
-		System.out.println(a.format(11111230.422));
+		//DecimalFormat a = new DecimalFormat("#.00");
+		//System.out.println(a.format(11111230.422));
+		
+		BigDecimal bd=new BigDecimal(450 - 0.17);
+		System.out.println(bd.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue());
+		
+		System.out.println(Math.round((28662d / 3600)));
+		
 	}
 }
