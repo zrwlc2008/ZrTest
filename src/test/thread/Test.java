@@ -3,7 +3,9 @@ package test.thread;
 public class Test {
 	public static void main(String[] args){
 		
-		new Thread(new MainThread()).start();
+		for (int i = 0; i < 10 ; i++) {
+			new Thread(new MainThread(i + "")).start();
+		}
 	
 	}
 }
