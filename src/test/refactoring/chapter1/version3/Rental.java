@@ -1,7 +1,5 @@
 package test.refactoring.chapter1.version3;
 
-import test.refactoring.chapter1.version1.Movie;
-
 public class Rental {
 	private Movie movie;
 	private int daysRented;
