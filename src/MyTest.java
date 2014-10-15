@@ -4,6 +4,12 @@ import java.text.DecimalFormat;
 
 public class MyTest {
 	
+	public enum Test{
+		A,
+		B,
+		C ;
+	}
+	
 	public static double getD(){
 		return 200000000000000.15 ;
 	}
@@ -244,5 +250,13 @@ public class MyTest {
 		
 		System.out.println(Math.round((28662d / 3600)));
 		
+		String params = ",0,0,,,";
+		System.out.println(params.split(",").length);  
+	    System.out.println("sra= " + params.split(",")[0]);
+	    System.out.println("sra1= " + params.split(",")[1]);
+	    System.out.println("sra2= " + params.split(",")[2]);
+	    System.out.println("sra3= " + params.split(",")[3]);
+	    System.out.println("sra4= " + params.split(",")[4]);
+
 	}
 }
