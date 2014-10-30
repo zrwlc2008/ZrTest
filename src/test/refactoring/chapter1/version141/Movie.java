@@ -1,4 +1,4 @@
-package test.refactoring.chapter1.version4;
+package test.refactoring.chapter1.version141;
 
 public class Movie {
 	public static final int CHILDRENS = 2;
@@ -29,10 +29,6 @@ public class Movie {
 		this.priceCode = priceCode;
 	}
 
-	/*
-	 * 为什么要将租期长度传给Movie，而不是将Movie传给Rental对象？因为本系统可能会添加影片类型，
-	 * 如果影片类型有所变化，就在Movie内之内能得到控制
-	 */
 	/**
 	 * 查询租用花费
 	 * @return
@@ -53,7 +49,7 @@ public class Movie {
 			thisCost += daysRented * 3;
 			break;
 		case Movie.CHILDRENS:
-			// 新片3天1.5元
+			// 儿童片3天1.5元
 			thisCost += 1.5;
 			// 超过3天每天1.5元
 			if (daysRented > 3) {
@@ -62,5 +58,19 @@ public class Movie {
 			break;
 		}
 		return thisCost;
+	}
+	
+	/**
+	 * 获取积分
+	 * 
+	 * @return
+	 */
+	public int getPoints(int daysRented) {
+		// 如果是新片并且租借1天以上，积分=2
+		if (this.getPriceCode() == Movie.NEW_RELEASE && daysRented > 1) {
+			return 2;
+		} else {
+			return 1;
+		}
 	}
 }

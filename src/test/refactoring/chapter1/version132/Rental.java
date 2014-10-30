@@ -1,4 +1,6 @@
-package test.refactoring.chapter1.version3;
+package test.refactoring.chapter1.version132;
+
+import test.refactoring.chapter1.version1.Movie;
 
 public class Rental {
 	private Movie movie;
@@ -26,7 +28,8 @@ public class Rental {
 	}
 
 	/**
-	 * 查询租用花费
+	 * 获取花费
+	 * 
 	 * @return
 	 */
 	public double getCost() {
@@ -45,7 +48,7 @@ public class Rental {
 			thisCost += this.getDaysRented() * 3;
 			break;
 		case Movie.CHILDRENS:
-			// 新片3天1.5元
+			// 儿童片3天1.5元
 			thisCost += 1.5;
 			// 超过3天每天1.5元
 			if (this.getDaysRented() > 3) {
@@ -56,9 +59,15 @@ public class Rental {
 		return thisCost;
 	}
 
+	/**
+	 * 获取积分
+	 * 
+	 * @return
+	 */
 	public int getPoints() {
 		// 如果是新片并且租借1天以上，积分=2
-		if (this.getMovie().getPriceCode() == Movie.NEW_RELEASE && this.getDaysRented() > 1) {
+		if (this.getMovie().getPriceCode() == Movie.NEW_RELEASE
+				&& this.getDaysRented() > 1) {
 			return 2;
 		} else {
 			return 1;

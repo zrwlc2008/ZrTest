@@ -1,4 +1,4 @@
-package test.refactoring.chapter1.version4;
+package test.refactoring.chapter1.version141;
 
 public class Rental {
 	private Movie movie;
@@ -25,22 +25,21 @@ public class Rental {
 		this.daysRented = daysRented;
 	}
 
-	//step1:最好不要在另一个对象的属性基础上运用switch语句，如果不得不使用，也应该在对象自己的数据上使用
-	//所以此方法应该移到Movie类
 	/**
-	 * 查询租用花费
+	 * 获取花费
+	 * 
 	 * @return
 	 */
 	public double getCost() {
 		return this.getMovie().getCost(this.getDaysRented());
 	}
 
+	/**
+	 * 获取积分
+	 * 
+	 * @return
+	 */
 	public int getPoints() {
-		// 如果是新片并且租借1天以上，积分=2
-		if (this.getMovie().getPriceCode() == Movie.NEW_RELEASE && this.getDaysRented() > 1) {
-			return 2;
-		} else {
-			return 1;
-		}
+		return this.getMovie().getPoints(this.getDaysRented());
 	}
 }
