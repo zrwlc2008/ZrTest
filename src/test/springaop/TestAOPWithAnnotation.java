@@ -25,8 +25,7 @@ public class TestAOPWithAnnotation extends AbstractJUnit4SpringContextTests {
 	 */
 	@Test
 	public void testCall() {
-		System.out.println("SpringTest JUnit test");
-		aService.barA();
+		aService.barA("111","2222");
 		bService.fooB();
 	}
 

@@ -30,9 +30,8 @@ public class TestAOP extends AbstractDependencyInjectionSpringContextTests {
      */  
     public void testCall()  
     {  
-        System.out.println("SpringTest JUnit test");  
-        aService.barA();  
-        bService.fooB();  
+        aService.barA("111","2222");  
+        //bService.fooB();  
         bService.barB();  
     }  
       
@@ -42,7 +41,7 @@ public class TestAOP extends AbstractDependencyInjectionSpringContextTests {
     public void testThrow()  
     {  
         try {  
-            bService.barB();  
+            //bService.barB();  
         } catch (IllegalArgumentException e) {  
               
         }  
