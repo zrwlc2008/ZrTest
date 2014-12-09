@@ -11,7 +11,7 @@ import com.blogspot.radialmind.xss.XSSFilter;
 public class TestXssProtect {  
   
     public static void main(String[] args) {
-        String html = "saaaaaaaaaaaa";  
+        String html = "<html><script>alert('aaaaa');</script></html>";  
         String v = protectAgainstXSS(html);  
         System.out.println(v);  
   
