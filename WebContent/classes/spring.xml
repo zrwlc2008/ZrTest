@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xsi:schemaLocation="  
+            http://www.springframework.org/schema/beans  
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd  
+            http://www.springframework.org/schema/aop  
+            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"  
+    default-autowire="autodetect">  
+    <aop:config>  
+        <!-- aspect主选项:指定aop的具体执行类 -->
+        <aop:aspect id="myAspect" ref="aspectBean">  
+            <!--pointcut子选项：用来配置切入点，这里选择了com.spring.service包下所有类或接口的所有方法为切入点-->  
+            <aop:pointcut id="businessService"
+                expression="execution(* test.springaop.service.*.*(..))" />  
+            <!-- before子选项：引用上面定义的pointcut，并且指定了 -->
+            <aop:before pointcut-ref="businessService" method="doBefore"/>
+            <!-- after子选项 -->  
+            <aop:after pointcut-ref="businessService" method="doAfter"/>  
+            <!-- around子选项 -->
+            <aop:around pointcut-ref="businessService" method="doAround"/>  
+            <!-- after-throwing子选项 -->
+            <aop:after-throwing pointcut-ref="businessService" method="doAfterThrowing" throwing="ex"/>  
+        </aop:aspect>  
+    </aop:config>  
+      
+    <bean id="aspectBean" class="test.springaop.service.AspectBean" />  
+    <bean id="aService" class="test.springaop.service.AService"></bean>  
+    <bean id="bService" class="test.springaop.service.BService"></bean>  
+  
+</beans>  
