@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
 
-public class JedisUtil {
+public class Example {
 
 	private Jedis jedis;
 

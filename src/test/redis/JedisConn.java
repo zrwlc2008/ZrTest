@@ -7,10 +7,10 @@ import java.util.Map;
 
 import redis.clients.jedis.Jedis;
 
-public class JedisConnection {
+public class JedisConn {
 	private Jedis jedis;
 
-	public JedisConnection(Jedis jedis) {
+	public JedisConn(Jedis jedis) {
 		this.jedis = jedis;
 	}
 
