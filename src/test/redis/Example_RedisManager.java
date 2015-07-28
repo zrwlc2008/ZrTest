@@ -30,7 +30,7 @@ import redis.clients.jedis.exceptions.JedisException;
  * 修改人:zhang_jhai
  * version 2.0
  */
-public class RedisManager{  
+public class Example_RedisManager{  
 	 
 	
 	RedisManagerProxy proxy;
@@ -53,21 +53,21 @@ public class RedisManager{
 	 */
 	private static class StaticHolder {
 	  static final RedisManagerProxy proxy = new RedisManagerProxy(ips);
-	  static final RedisManager instance = (RedisManager) proxy.getProxy(new RedisManager(proxy));
+	  static final Example_RedisManager instance = (Example_RedisManager) proxy.getProxy(new Example_RedisManager(proxy));
 	}
 	  
-	public static RedisManager getInstance(String ips){
-	   RedisManager.ips = ips;
+	public static Example_RedisManager getInstance(String ips){
+	   Example_RedisManager.ips = ips;
 	   return StaticHolder.instance;   
 	}   
   
 	
-    public RedisManager() {
+    public Example_RedisManager() {
 		super();
 	}
 
 
-	private RedisManager(RedisManagerProxy proxy){
+	private Example_RedisManager(RedisManagerProxy proxy){
     	this.proxy = proxy;
     }
     
@@ -377,7 +377,7 @@ public class RedisManager{
     
     
 	public static void main(String[] arg){
-        final RedisManager rm = RedisManager.getInstance("192.168.67.7:6379");
+        final Example_RedisManager rm = Example_RedisManager.getInstance("192.168.67.7:6379");
         rm.enableReadWriteSeparation(true);
         rm.put("zhang", "test");
      	System.out.println(rm.get("zhang"));
@@ -489,11 +489,11 @@ class RedisManagerProxy implements MethodInterceptor{
     		}
     		
     	}}catch(Exception e){
-    		logger.error("ip格式不对，示例:"+RedisManager.DEFAULTIPFORMAT);
+    		logger.error("ip格式不对，示例:"+Example_RedisManager.DEFAULTIPFORMAT);
     		System.exit(-1);
     	}
     	if (list.size()==0){
-	    	logger.error("ip格式不对，示例:"+RedisManager.DEFAULTIPFORMAT);
+	    	logger.error("ip格式不对，示例:"+Example_RedisManager.DEFAULTIPFORMAT);
 	    	System.exit(-1);
 	    }
     	jedisPool  = new HAJedisPool(config,list);
@@ -510,9 +510,9 @@ class RedisManagerProxy implements MethodInterceptor{
 	public Jedis getCurrJedis(){
 		return currJedis.get();
 	}
-	RedisManager target;
+	Example_RedisManager target;
 	public Object getProxy(Object target){
-		 this.target = (RedisManager) target;
+		 this.target = (Example_RedisManager) target;
 		 Enhancer enhancer = new Enhancer();  
 		 enhancer.setSuperclass(target.getClass());  
 		 enhancer.setCallback(this); 
@@ -972,7 +972,8 @@ class HAJedis extends Jedis{
 		return this.getClient().getPort();
 	}
 	public int getTimeout(){
-		return this.getClient().getTimeout();
+		//return this.getClient().getTimeout();
+		return 0 ;
 	}
 	
 }

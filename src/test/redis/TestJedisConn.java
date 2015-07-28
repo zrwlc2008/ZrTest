@@ -8,25 +8,25 @@ public class TestJedisConn {
 	 */
 	public static void main(String[] args) {
 
-		JedisConn conn = JedisPoolUtil.getConnection();
+		//JedisConn conn = JedisPoolUtil.getConnection();
 
-//		conn.set("hello", "world");
-//		System.out.println(conn.get("hello"));
+		//conn.set("hello", "world");
+		//System.out.println(conn.get("hello"));
 //
 //		conn.set("num", "1");
-//		// 变为2
+//		// 锟斤拷为2
 //		conn.increase("num");
 //		System.out.println(conn.get("num"));
 //
-//		// 变为4
+//		// 锟斤拷为4
 //		conn.increase("num", 2);
 //		System.out.println(conn.get("num"));
 //
-//		// 变为3
+//		// 锟斤拷为3
 //		conn.decrease("num");
 //		System.out.println(conn.get("num"));
 //
-//		// 变为1
+//		// 锟斤拷为1
 //		conn.decrease("num", 2);
 //		System.out.println(conn.get("num"));
 //
@@ -56,14 +56,14 @@ public class TestJedisConn {
 		
 		//System.out.println(conn.get("hello4"));
 		
-		conn.set("num", "0");
-		
-		for (int i = 0; i < 1000 ; i++) {
-			
-			Thread t = new Thread(new TestThread(), i + "");
-			t.start();
-			
-		}
+//		conn.set("num", "0");
+//		
+//		for (int i = 0; i < 1000 ; i++) {
+//			
+//			Thread t = new Thread(new TestThread(), i + "");
+//			t.start();
+//			
+//		}
 	}
 
 }
