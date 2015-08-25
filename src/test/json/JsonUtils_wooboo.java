@@ -38,7 +38,7 @@ import com.alibaba.fastjson.JSON;
 * 
 * @version 1.0.0
 */
-public class JsonUtils {
+public class JsonUtils_wooboo {
 
 
 	/**
@@ -131,7 +131,7 @@ public class JsonUtils {
 		Object object = null;
 		mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
 		mapper.configure(Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		object = JsonUtils.jsongToObject(json, Object.class);
+		object = JsonUtils_wooboo.jsongToObject(json, Object.class);
 
 		return object;
 	}
