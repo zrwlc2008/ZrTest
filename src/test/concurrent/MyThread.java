@@ -9,15 +9,19 @@ public class MyThread implements Runnable {
 	@Override
 	public void run() {
 		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		synchronized(obj){
-			System.out.println("task" + Thread.currentThread().getId() + "----print------" + (++cnt));
+		while(true){
+			
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			synchronized(obj){
+				System.out.println("task" + Thread.currentThread().getId() + "----print------" + (++cnt));
+			}
+			
 		}
 	
 	}
