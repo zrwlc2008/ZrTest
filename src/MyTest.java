@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -244,7 +245,7 @@ public class MyTest {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedEncodingException {
 
 		// testSubString();
 
@@ -265,5 +266,12 @@ public class MyTest {
 		// System.out.println("sra4= " + params.split(",")[4]);
 		
 		System.out.println(testIf(70));
-	}
+		
+		String s = "aaa" ;
+		System.out.println(s.split(",").length);
+		
+		String s1 = "\u7b7e\u540d\u6821\u9a8c\u4e0d\u5339\u914d";
+		System.out.println(s1);
+		
+ 	}
 }
