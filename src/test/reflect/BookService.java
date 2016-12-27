@@ -1,6 +1,6 @@
-package test.jdkproxy;
+package test.reflect;
 
-public class BookService implements BookFacade {
+public class BookService implements IBookService {
 
 	@Override
 	public String addBook() {
